@@ -68,6 +68,7 @@ function c75498415.operation(e,tp,eg,ep,ev,re,r,rp)
 		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
 		e1:SetValue(atk)
 		tc:RegisterEffect(e1)
+		local elast = e1
 		if not tc:IsImmuneToEffect(e) then
 			local e_reset=Effect.CreateEffect(e:GetHandler())
 			e_reset:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
