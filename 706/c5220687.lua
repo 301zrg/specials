@@ -12,8 +12,7 @@ function c5220687.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c5220687.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
-		and Duel.IsExistingMatchingCard(c5220687.filter,tp,LOCATION_DECK,0,1,nil,e,tp) end
+	if chk==0 then return true end;
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
 end
 function c5220687.filter(c,e,tp)
