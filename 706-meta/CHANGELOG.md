@@ -11,6 +11,8 @@ Sources: old-ruling changes link the yugioh-wiki **history version** that first 
 脚本内容提交 S / script commit: [`19ace09c7fc7c80ceb03eef99621942a7b135bc4`](https://github.com/301zrg/specials/commit/19ace09c7fc7c80ceb03eef99621942a7b135bc4) · `706/` 子树 / subtree: `4ef49453974f60fd5b91cb54bc7bc6713541c834` · 标签 / tag: `706-20261110`（打在 S 上 / on S）· 分界 / boundary: `1794252902`（Unix 秒 / seconds）
 完整生效 Lua 树摘要 / effective Lua tree digest: 切换前 / before `cfaa3d5932f2fd42492bb4baa539dafa35e50960534d87009ac336a5f9d587d8` → 切换后 / after `905a9e2a4322423f2caa25f4040d2d11d818b6ca35881d02085dcf8acca144ac`
 
+元数据勘误（2026-11-10）/ metadata erratum: [versions.json](versions.json) 本条的 `bootstrapSha256`（合成后 `utility.lua` 的 SHA）最初误抄了上一条的值，已更正为 `59a4dbd4a2377bce6ca830d4da0b6b2665e01c87206274028d627833b508e45e`。规则内容、`706/` 子树和分界都不变，不是新环境。/ This entry first copied the previous `bootstrapSha256` (the SHA of the composed `utility.lua`); corrected. Rules, the `706/` subtree and the boundary are unchanged; this is not a new environment.
+
 ### 706 覆盖 / overrides
 
 | 卡 / Card | 改动 / Change | 依据 / Source |

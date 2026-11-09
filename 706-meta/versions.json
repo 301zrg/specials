@@ -43,7 +43,7 @@
         "nearestUpstream": "5864b6f6e58d49738e0996b94e96655b51f420bf",
         "syncedFromUpstream": 22
       },
-      "bootstrapSha256": "e271049430e0f980d4ef3e5f55d92b0778ff82696bbe1fd6a5f49b64f7ce968b",
+      "bootstrapSha256": "59a4dbd4a2377bce6ca830d4da0b6b2665e01c87206274028d627833b508e45e",
       "luaTreeSha256": "905a9e2a4322423f2caa25f4040d2d11d818b6ca35881d02085dcf8acca144ac",
       "cards": {
         "engineCdbSha256": "a49f0652ad54a7f55c569284ca154f0ec435fc26ebdd728927052e57b9d816e5",
