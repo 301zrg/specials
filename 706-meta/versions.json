@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "environments": [
+    {
+      "id": "706-20260907",
+      "effectiveFromUnix": null,
+      "evidence": "pre-release-server-snapshot",
+      "specials": {
+        "commit": "d6008e9832e5666e665a84dca2e8e59810b3cdfa",
+        "tree706": "fe58410ca5a60f879e8c92e94c3fba86539e9006",
+        "tag": null
+      },
+      "baseScripts": {
+        "kind": "server-snapshot",
+        "capturedAt": "2026-11-09T12:31:56Z",
+        "nearestUpstream": "5864b6f6e58d49738e0996b94e96655b51f420bf"
+      },
+      "bootstrapSha256": "e271049430e0f980d4ef3e5f55d92b0778ff82696bbe1fd6a5f49b64f7ce968b",
+      "luaTreeSha256": "cfaa3d5932f2fd42492bb4baa539dafa35e50960534d87009ac336a5f9d587d8",
+      "cards": {
+        "engineCdbSha256": "a49f0652ad54a7f55c569284ca154f0ec435fc26ebdd728927052e57b9d816e5",
+        "cardReaderSha256": "6e3701ff8e5998938c8659f332a1a32ea573e761e73b8b97c86a10cde5457cb9",
+        "count": 5267
+      },
+      "engine": {
+        "core": "e04144d62499c17d0cfa8313f9742434ef99c3a7",
+        "serverExeSha256": "50bcf18e8cd58ddc0d6157c02924268c1fea3c0a56b77f0cf18b5c027ba2c0f6"
+      }
+    },
+    {
+      "id": "706-20261110",
+      "effectiveFromUnix": 1794252902,
+      "effectiveFrom": "2026-11-10T03:35:02+08:00",
+      "evidence": "release-receipt",
+      "releaseBatch": "script-release-20261110",
+      "specials": {
+        "commit": "19ace09c7fc7c80ceb03eef99621942a7b135bc4",
+        "tree706": "4ef49453974f60fd5b91cb54bc7bc6713541c834",
+        "tag": "706-20261110"
+      },
+      "baseScripts": {
+        "kind": "release-receipt",
+        "nearestUpstream": "5864b6f6e58d49738e0996b94e96655b51f420bf",
+        "syncedFromUpstream": 22
+      },
+      "bootstrapSha256": "e271049430e0f980d4ef3e5f55d92b0778ff82696bbe1fd6a5f49b64f7ce968b",
+      "luaTreeSha256": "905a9e2a4322423f2caa25f4040d2d11d818b6ca35881d02085dcf8acca144ac",
+      "cards": {
+        "engineCdbSha256": "a49f0652ad54a7f55c569284ca154f0ec435fc26ebdd728927052e57b9d816e5",
+        "cardReaderSha256": "6e3701ff8e5998938c8659f332a1a32ea573e761e73b8b97c86a10cde5457cb9",
+        "count": 5267
+      },
+      "engine": {
+        "core": "e04144d62499c17d0cfa8313f9742434ef99c3a7",
+        "serverExeSha256": "50bcf18e8cd58ddc0d6157c02924268c1fea3c0a56b77f0cf18b5c027ba2c0f6"
+      }
+    }
+  ]
+}
