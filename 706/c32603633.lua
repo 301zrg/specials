@@ -35,7 +35,7 @@ function c32603633.op(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(c32603633.filter,tp,LOCATION_GRAVE,0,nil,e,tp)
 	if g:GetCount()>0 then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-		local sg=g:SelectSubGroup(tp,aux.dncheck,false,1,ft)
+		local sg=g:SelectSubGroup(tp,aux.dncheck,false,ft,ft)
 		Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 	end
 end

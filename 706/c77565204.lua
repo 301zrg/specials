@@ -27,7 +27,8 @@ function c77565204.filter1(c,e)
 	return c:IsType(TYPE_MONSTER) and c:IsAbleToGrave() and not c:IsImmuneToEffect(e)
 end
 function c77565204.filter2(c,m)
-	return c:IsType(TYPE_FUSION) and c:CheckFusionMaterial(m) and not c:IsForbidden()
+	--旧裁定(12/04/10)：未来融合送墓的卡在融合怪兽特招后才视为融合素材，送墓时不检查能否作为融合素材（如被禁止令宣言）
+	return c:IsType(TYPE_FUSION) and c:CheckFusionMaterial(m,nil,PLAYER_NONE,true) and not c:IsForbidden()
 end
 function c77565204.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
@@ -47,7 +48,9 @@ function c77565204.activate(e,tp,eg,ep,ev,re,r,rp)
 		local tc=tg:GetFirst()
 		Duel.ConfirmCards(1-tp,tc)
 		local code=tc:GetCode()
-		local mat=Duel.SelectFusionMaterial(tp,tc,mg)
+		--标记已选定融合怪兽，禁止令据此判断"禁止令处理前已选定"的例外（12/03/08、12/04/10）
+		c:RegisterFlagEffect(77565204,RESET_EVENT+RESETS_STANDARD,0,1)
+		local mat=Duel.SelectFusionMaterial(tp,tc,mg,nil,PLAYER_NONE,true)
 		local fg=Duel.GetMatchingGroup(Card.IsCode,tp,LOCATION_EXTRA,0,nil,code)
 		local tc=fg:GetFirst()
 		while tc do

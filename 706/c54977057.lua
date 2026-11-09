@@ -10,60 +10,11 @@ function c54977057.initial_effect(c)
     e1:SetTarget(c54977057.target)
     e1:SetOperation(c54977057.activate)
     c:RegisterEffect(e1)
-    if not c54977057.global_check then
-        c54977057.global_check = true
-        c54977057[0] = false
-        c54977057[1] = false
-        local ge1 = Effect.CreateEffect(c)
-        ge1:SetType(EFFECT_TYPE_FIELD + EFFECT_TYPE_CONTINUOUS)
-        ge1:SetCode(EVENT_SPSUMMON_NEGATED)
-        ge1:SetOperation(c54977057.checkop1)
-        Duel.RegisterEffect(ge1, 0)
-        local ge2 = Effect.CreateEffect(c)
-        ge2:SetType(EFFECT_TYPE_FIELD + EFFECT_TYPE_CONTINUOUS)
-        ge2:SetCode(EVENT_CHAINING)
-        ge2:SetOperation(c54977057.checkop2)
-        Duel.RegisterEffect(ge2, 0)
-        local ge3 = Effect.CreateEffect(c)
-        ge3:SetType(EFFECT_TYPE_FIELD + EFFECT_TYPE_CONTINUOUS)
-        ge3:SetCode(EVENT_CHAIN_NEGATED)
-        ge3:SetOperation(c54977057.checkop3)
-        Duel.RegisterEffect(ge3, 0)
-        local ge4 = Effect.CreateEffect(c)
-        ge4:SetType(EFFECT_TYPE_FIELD + EFFECT_TYPE_CONTINUOUS)
-        ge4:SetCode(EVENT_TURN_END)
-        ge4:SetOperation(c54977057.clear)
-        Duel.RegisterEffect(ge4, 0)
-    end
-end
-function c54977057.checkop1(e, tp, eg, ep, ev, re, r, rp)
-    local tc = eg:GetFirst()
-    local turnp = Duel.GetTurnPlayer()
-    c54977057[turnp] = tc:IsControler(turnp)
-end
-function c54977057.checkop2(e, tp, eg, ep, ev, re, r, rp)
-    local turnp = Duel.GetTurnPlayer()
-    local ex = Duel.GetOperationInfo(ev, CATEGORY_SPECIAL_SUMMON)
-    if ex and rp == turnp then
-        c54977057[turnp] = true
-    end
-end
-function c54977057.checkop3(e, tp, eg, ep, ev, re, r, rp)
-    local turnp = Duel.GetTurnPlayer()
-    local ex = Duel.GetOperationInfo(ev, CATEGORY_SPECIAL_SUMMON)
-    if ex and rp == turnp then
-        c54977057[turnp] = false
-    end
-end
-function c54977057.clear(e, tp, eg, ep, ev, re, r, rp)
-    c54977057[0] = false
-    c54977057[1] = false
 end
 function c54977057.cost(e, tp, eg, ep, ev, re, r, rp, chk)
-	local turnp=Duel.GetTurnPlayer()
+    --旧裁定的"被无效的特殊召唤也算进行过特殊召唤"由 utility.lua / special.lua 统一 hook 的 GetActivityCount 处理
     if chk == 0 then
-        return Duel.GetActivityCount(tp, ACTIVITY_SPSUMMON) == 0 and Duel.GetActivityCount(tp, ACTIVITY_BATTLE_PHASE) ==
-                   0 and not c54977057[turnp]
+        return Duel.GetActivityCount(tp, ACTIVITY_SPSUMMON) == 0 and Duel.GetActivityCount(tp, ACTIVITY_BATTLE_PHASE) == 0
     end
     local e1 = Effect.CreateEffect(e:GetHandler())
     e1:SetType(EFFECT_TYPE_FIELD)
