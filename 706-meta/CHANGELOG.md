@@ -6,6 +6,18 @@
 出处规则：旧裁定改动附 yugioh-wiki 的**历史版本**页（最早收录该裁定的版本，标注存档时间、age 和裁定日期），或寒波亭裁定原文。修 bug 的改动写“修 bug，无裁定依据”。
 Sources: old-ruling changes link the yugioh-wiki **history version** that first carries the ruling (archive time, age and ruling date), or the Kanpatei ruling notes. Plain bug fixes say so.
 
+## 706-20261110-3（生效 / effective: 2026-11-10 15:20:59 +08:00）
+
+脚本内容提交 S / script commit: [`832fae822f73385b42019f08ee479d54e7d1a998`](https://github.com/301zrg/specials/commit/832fae822f73385b42019f08ee479d54e7d1a998) · `706/` 子树 / subtree: `f15857af133b9e7a57bd91e01448daf605d8f487` · 标签 / tag: `706-20261110-3`（打在 S 上 / on S）· 分界 / boundary: `1794295259`（Unix 秒 / seconds）
+完整生效 Lua 树摘要 / effective Lua tree digest: 切换前 / before `3721e39e2d088e4cad54e4a09062b76eefe580465199f9b3ad74196ac6f60a95` → 切换后 / after `515670051227e9ae3bb4583eca57223114a93484f668dcd710461c0f561a12de`
+
+只换一个文件，与 706-20261110-2 相同的方式：按维护者决定不等零房间，同目录原子替换，不重启、不开维护；分界取替换完成后的下一个整秒，替换前已开局的对局继续使用上一版。
+One file, same procedure as 706-20261110-2: replaced without waiting for zero rooms (atomic same-directory replace, no restart, no maintenance); the boundary is the first whole second after the replace, and duels started earlier keep the previous version.
+
+| 卡 / Card | 改动 / Change | 依据 / Source |
+| --- | --- | --- |
+| 26993374 X-剑士 乌尔德 / X-Saber Urz | 自首次上传（`a834afa`，2025-08-15）起 `706/c26993374.lua` 一直是真红眼暗钢龙的脚本，这张卡在游戏里按那张卡运作；换回乌尔德自己的脚本（与上游 `c26993374.lua` 一致）。服务器基础目录的 `script/c26993374.lua` 同样是错的，所以保留覆盖而不是删除 / since the first upload the file held the Red-Eyes Darkness Metal Dragon script; it now has the Urz script (identical to upstream). The server base `script/c26993374.lua` is wrong too, so the override stays | 修 bug（上传时放错文件），无裁定依据 / bug fix (wrong file uploaded), no ruling |
+
 ## 706-20261110-2（生效 / effective: 2026-11-10 10:13:34 +08:00）
 
 脚本内容提交 S / script commit: [`323d915d715240565e3f4d4ad3a8cb6e56355f82`](https://github.com/301zrg/specials/commit/323d915d715240565e3f4d4ad3a8cb6e56355f82) · `706/` 子树 / subtree: `7529253d18814b4217a58c2f2e985a394f0c6d00` · 标签 / tag: `706-20261110-2`（打在 S 上 / on S）· 分界 / boundary: `1794276814`（Unix 秒 / seconds）

@@ -82,6 +82,34 @@
         "core": "e04144d62499c17d0cfa8313f9742434ef99c3a7",
         "serverExeSha256": "50bcf18e8cd58ddc0d6157c02924268c1fea3c0a56b77f0cf18b5c027ba2c0f6"
       }
+    },
+    {
+      "id": "706-20261110-3",
+      "effectiveFromUnix": 1794295259,
+      "effectiveFrom": "2026-11-10T15:20:59+08:00",
+      "evidence": "manual-hot-swap-receipt",
+      "releaseBatch": "script-release-20261110-3",
+      "specials": {
+        "commit": "832fae822f73385b42019f08ee479d54e7d1a998",
+        "tree706": "f15857af133b9e7a57bd91e01448daf605d8f487",
+        "tag": "706-20261110-3"
+      },
+      "baseScripts": {
+        "kind": "release-receipt",
+        "nearestUpstream": "5864b6f6e58d49738e0996b94e96655b51f420bf",
+        "syncedFromUpstream": 22
+      },
+      "bootstrapSha256": "59a4dbd4a2377bce6ca830d4da0b6b2665e01c87206274028d627833b508e45e",
+      "luaTreeSha256": "515670051227e9ae3bb4583eca57223114a93484f668dcd710461c0f561a12de",
+      "cards": {
+        "engineCdbSha256": "a49f0652ad54a7f55c569284ca154f0ec435fc26ebdd728927052e57b9d816e5",
+        "cardReaderSha256": "6e3701ff8e5998938c8659f332a1a32ea573e761e73b8b97c86a10cde5457cb9",
+        "count": 5267
+      },
+      "engine": {
+        "core": "e04144d62499c17d0cfa8313f9742434ef99c3a7",
+        "serverExeSha256": "50bcf18e8cd58ddc0d6157c02924268c1fea3c0a56b77f0cf18b5c027ba2c0f6"
+      }
     }
   ]
 }
