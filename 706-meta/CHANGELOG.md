@@ -6,6 +6,18 @@
 出处规则：旧裁定改动附 yugioh-wiki 的**历史版本**页（最早收录该裁定的版本，标注存档时间、age 和裁定日期），或寒波亭裁定原文。修 bug 的改动写“修 bug，无裁定依据”。
 Sources: old-ruling changes link the yugioh-wiki **history version** that first carries the ruling (archive time, age and ruling date), or the Kanpatei ruling notes. Plain bug fixes say so.
 
+## 706-20261110-4（生效 / effective: 2026-11-10 17:46:19 +08:00）
+
+脚本内容提交 S / script commit: [`9b490f405f738f4dc7afb844dc70007401a3a08a`](https://github.com/301zrg/specials/commit/9b490f405f738f4dc7afb844dc70007401a3a08a) · `706/` 子树 / subtree: `a0b3519b16433beb7646bbfaada6b2787e3dc7f0` · 标签 / tag: `706-20261110-4`（打在 S 上 / on S）· 分界 / boundary: `1794303979`（Unix 秒 / seconds）
+完整生效 Lua 树摘要 / effective Lua tree digest: 切换前 / before `515670051227e9ae3bb4583eca57223114a93484f668dcd710461c0f561a12de` → 切换后 / after `5368f598daf37aad6e56052dc122986b4f816e6abc52a94664e7d6ce60f952e9`
+
+只换一个文件，与 706-20261110-2、-3 相同的方式（不等零房间，同目录原子替换，不重启、不开维护；替换前已开局的对局继续使用上一版）。
+One file, same procedure as 706-20261110-2 and -3 (no wait for zero rooms, atomic same-directory replace, no restart; duels started earlier keep the previous version).
+
+| 卡 / Card | 改动 / Change | 依据 / Source |
+| --- | --- | --- |
+| 27821104 六武众的荒行 / Asceticism of the Six Samurai | 卡组里没有可特召的怪兽时：确认卡组改为双方都看（原来只发给发动者自己，对方看不到）；并且只在 1103 卡池存在卡名不同、攻击力相同的主卡组「六武众」时才确认，否则从公开信息就能断定没有，不公开 / when nothing can be summoned, the deck is now shown to both players (before, only the activating player saw it), and only when a main-deck "Six Samurai" with a different name has that ATK | 同类卡的明文裁定（类比）/ explicit rulings on similar cards (analogy)：[wiki 光之援军 2009-10-23 版（age=22）](https://yugioh-wiki.net/index.php?cmd=backup&page=%A1%D4%B8%F7%A4%CE%B1%E7%B7%B3%A1%D5&age=22)「相手はその時にデッキのカードを確認する事ができます」(09/10/22)；[wiki 守墓的侦察者 2009-04-04 版（age=62）](https://yugioh-wiki.net/index.php?cmd=backup&page=%A1%D4%CA%E8%BC%E9%A4%CE%C4%E5%BB%A1%BC%D4%A1%D5&age=62)「相手がデッキ確認を求めた場合はデッキを公開する必要があります」(09/04/02)；明显没有时不确认 / not when absence is evident：[wiki 心灵崩坏 2010-03-05 版（age=1）](https://yugioh-wiki.net/index.php?cmd=backup&page=%A1%D4%A5%DE%A5%A4%A5%F3%A5%C9%A5%AF%A5%E9%A5%C3%A5%B7%A5%E5%A1%D5&age=1)「無いことが明確な場合を除き確認できます」。本卡 / this card：[wiki 2010-11-14 版（age=5）](https://yugioh-wiki.net/index.php?cmd=backup&page=%A1%D4%CF%BB%C9%F0%BD%B0%A4%CE%B9%D3%B9%D4%A1%D5&age=5)「デッキから特殊召喚する事ができるモンスターが存在しない場合でも、モンスターを破壊する処理は行われます」(10/11/13) |
+
 ## 706-20261110-3（生效 / effective: 2026-11-10 15:20:59 +08:00）
 
 脚本内容提交 S / script commit: [`832fae822f73385b42019f08ee479d54e7d1a998`](https://github.com/301zrg/specials/commit/832fae822f73385b42019f08ee479d54e7d1a998) · `706/` 子树 / subtree: `f15857af133b9e7a57bd91e01448daf605d8f487` · 标签 / tag: `706-20261110-3`（打在 S 上 / on S）· 分界 / boundary: `1794295259`（Unix 秒 / seconds）
