@@ -6,6 +6,18 @@
 出处规则：旧裁定改动附 yugioh-wiki 的**历史版本**页（最早收录该裁定的版本，标注存档时间、age 和裁定日期），或寒波亭裁定原文。修 bug 的改动写“修 bug，无裁定依据”。
 Sources: old-ruling changes link the yugioh-wiki **history version** that first carries the ruling (archive time, age and ruling date), or the Kanpatei ruling notes. Plain bug fixes say so.
 
+## 706-20261110-2（生效 / effective: 2026-11-10 10:13:34 +08:00）
+
+脚本内容提交 S / script commit: [`323d915d715240565e3f4d4ad3a8cb6e56355f82`](https://github.com/301zrg/specials/commit/323d915d715240565e3f4d4ad3a8cb6e56355f82) · `706/` 子树 / subtree: `7529253d18814b4217a58c2f2e985a394f0c6d00` · 标签 / tag: `706-20261110-2`（打在 S 上 / on S）· 分界 / boundary: `1794276814`（Unix 秒 / seconds）
+完整生效 Lua 树摘要 / effective Lua tree digest: 切换前 / before `905a9e2a4322423f2caa25f4040d2d11d818b6ca35881d02085dcf8acca144ac` → 切换后 / after `3721e39e2d088e4cad54e4a09062b76eefe580465199f9b3ad74196ac6f60a95`
+
+紧急修复，只换一个文件。玩家报告后按维护者决定**不等零房间**直接替换（同目录原子替换，不重启、不开维护）；分界取替换完成后的下一个整秒，替换前已开局的对局继续使用上一版。
+Hot fix of one file. After a player report the maintainer chose to replace it **without waiting for zero rooms** (atomic same-directory replace, no restart, no maintenance); the boundary is the first whole second after the replace, and duels started earlier keep the previous version.
+
+| 卡 / Card | 改动 / Change | 依据 / Source |
+| --- | --- | --- |
+| 32603633 究极·背水之阵 / Backs to the Wall | 706-20261110 要求特召数等于空位数，墓地不同名「六武众」少于空位时效果因脚本错误失败；改为特召“空位数”与“可选的不同卡名数”中较小者 / 706-20261110 required exactly as many as free zones and failed with a script error when fewer different-name "Six Samurai" were in the GY; now summons the smaller of the free zones and the eligible names | 修 bug，裁定不变 / bug fix, ruling unchanged：[wiki 2011-08-08 版（age=48）](https://yugioh-wiki.net/index.php?cmd=backup&page=%A1%D4%B5%E6%B6%CB%A1%A6%C7%D8%BF%E5%A4%CE%BF%D8%A1%D5&age=48)「自分フィールド上に可能な限り特殊召喚する（同名カードは１枚まで）」 |
+
 ## 706-20261110（生效 / effective: 2026-11-10 03:35:02 +08:00）
 
 脚本内容提交 S / script commit: [`19ace09c7fc7c80ceb03eef99621942a7b135bc4`](https://github.com/301zrg/specials/commit/19ace09c7fc7c80ceb03eef99621942a7b135bc4) · `706/` 子树 / subtree: `4ef49453974f60fd5b91cb54bc7bc6713541c834` · 标签 / tag: `706-20261110`（打在 S 上 / on S）· 分界 / boundary: `1794252902`（Unix 秒 / seconds）
