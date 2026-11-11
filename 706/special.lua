@@ -120,7 +120,10 @@ function Auxiliary.PreloadUds()
 	Duel.AddCustomActivityCounter = function(id,atype,f)
 		Auxiliary.__custom_act_filter = Auxiliary.__custom_act_filter or {}
 		Auxiliary.__custom_act_filter[id] = Auxiliary.__custom_act_filter[id] or {}
-		Auxiliary.__custom_act_filter[id][atype] = f
+		--Core用emplace保留同一ID／类型首次注册的过滤器。
+		if not Auxiliary.__custom_act_filter[id][atype] then
+			Auxiliary.__custom_act_filter[id][atype] = f
+		end
 		return base.AddCustomActivityCounter(id,atype,f)
 	end
 	Duel.GetCustomActivityCount = function(id,p,atype)
@@ -224,14 +227,14 @@ end
 
 --召唤被无效计次（旧裁定），说明见 ygopro_old/召唤无效计次旧裁定整理.md
 --每个玩家本回合：sum=被无效的通常召唤 flip=被无效的反转召唤 sp=被无效的召唤规则特招+发动成功但没特招出来的效果
---cards[活动类型]=被无效召唤的卡（供自定义计数器按过滤条件计入）
+--custom[计数器ID][活动类型]=事件发生时已判定的次数，不保留可变Card对象
 function Auxiliary.NegActState(p)
 	local s=Auxiliary.__neg_act
 	local turn=Duel.GetTurnCount()
 	if not s or s.turn~=turn then
 		s={turn=turn}
 		for i=0,1 do
-			s[i]={sum=0,flip=0,sp=0,cards={[ACTIVITY_SUMMON]={},[ACTIVITY_NORMALSUMMON]={},[ACTIVITY_FLIPSUMMON]={},[ACTIVITY_SPSUMMON]={}}}
+			s[i]={sum=0,flip=0,sp=0,custom={}}
 		end
 		Auxiliary.__neg_act=s
 	end
@@ -245,23 +248,24 @@ function Auxiliary.NegActExtra(p,atype)
 	if atype==ACTIVITY_SPSUMMON then return st.sp end
 	return 0
 end
---自定义计数器：被无效召唤的卡里，不符合该计数器过滤条件（即会被计入）的张数
+--自定义计数器：查询只读已固定的历史结果，不再次运行过滤器
 function Auxiliary.NegActCustomExtra(id,p,atype)
 	if p~=0 and p~=1 then return 0 end
-	local fl=Auxiliary.__custom_act_filter and Auxiliary.__custom_act_filter[id]
-	local f=fl and fl[atype]
-	if not f then return 0 end
-	local list=Auxiliary.NegActState(p).cards[atype]
-	if not list then return 0 end
-	local ct=0
-	for _,c in ipairs(list) do
-		if not f(c) then ct=ct+1 end
-	end
-	return ct
+	local counts=Auxiliary.NegActState(p).custom[id]
+	return counts and counts[atype] or 0
 end
 function Auxiliary.NegActAddCards(st,atype,eg)
-	for tc in aux.Next(eg) do
-		table.insert(st.cards[atype],tc)
+	--与Core一样，在活动发生时对已注册的过滤器判定；后注册不追溯。
+	for id,filters in pairs(Auxiliary.__custom_act_filter or {}) do
+		local f=filters[atype]
+		if f then
+			for tc in aux.Next(eg) do
+				if not f(tc) then
+					st.custom[id]=st.custom[id] or {}
+					st.custom[id][atype]=(st.custom[id][atype] or 0)+1
+				end
+			end
+		end
 	end
 end
 function Auxiliary.NegActRegister()
