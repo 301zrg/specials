@@ -6,6 +6,18 @@
 出处规则：旧裁定改动附 yugioh-wiki 的**历史版本**页（最早收录该裁定的版本，标注存档时间、age 和裁定日期），或寒波亭裁定原文。修 bug 的改动写“修 bug，无裁定依据”。
 Sources: old-ruling changes link the yugioh-wiki **history version** that first carries the ruling (archive time, age and ruling date), or the Kanpatei ruling notes. Plain bug fixes say so.
 
+## 706-20261112（生效 / effective: 2026-11-12 05:30:16 +08:00）
+
+脚本内容提交 S / script commit: [`82666114d7db3c55856cac7aba6b0769aefe8fc3`](https://github.com/301zrg/specials/commit/82666114d7db3c55856cac7aba6b0769aefe8fc3) · `706/` 子树 / subtree: `415a9d02c422d2103b4ac968be0e0db8cd9c4bd1` · 标签 / tag: `706-20261112`（打在 S 上 / on S）· 分界 / boundary: `1794432616`（Unix 秒 / seconds）
+完整生效 Lua 树摘要 / effective Lua tree digest: 切换前 / before `5368f598daf37aad6e56052dc122986b4f816e6abc52a94664e7d6ce60f952e9` → 切换后 / after `fa2f656b229622fe4568edd28ad2e2a79eb5e150961041de66597511a8fe7cd4`
+
+换 `special.lua` 与服务器组合的 `utility.lua` 两个文件（`utility.lua` 只有 special 段变化）。与 -2、-3、-4 的热替换不同，这次等零房间、开维护屏障后切换，分界 T 在屏障内确定，开局时间早于 T 的对局都用上一版（批次 `script-release-f01-20261112-r2`；首次批次 `script-release-f01-20261112` 在健康检查阶段回滚，没有生效）。
+Two files: `special.lua` and the server's combined `utility.lua` (only its special part changed). Unlike the -2, -3 and -4 hot swaps, this one waited for zero rooms and switched behind the maintenance barrier, with T fixed inside it, so every duel started before T used the previous version (batch `script-release-f01-20261112-r2`; the first batch `script-release-f01-20261112` rolled back at its health check and never took effect).
+
+| 卡 / Card | 改动 / Change | 依据 / Source |
+| --- | --- | --- |
+| `special.lua`（召唤被无效计次 / negated-summon counting；如 50088247 冰结界的传道师 / Medium of the Ice Barrier） | 自定义计数器改为在召唤被无效的当时判定并固定次数，之后被无效的卡等级改变、离场或效果重置都不会改写这次历史；同一计数器 ID 保留首次注册的过滤器（与底层 Core 一致）。原来存下卡片、查询时才按当前状态判定，同一次历史可能从计入变成不计入 / custom counters now judge a negated summon when it happens and keep the count, so later level changes, leaving the field or effect resets no longer rewrite it; the first filter registered for an ID is kept, as in the Core. Before, the card was stored and judged by its current state at query time | 修 bug（判定时机），裁定不变：召唤计次出处见 706-20261110「召唤计次」一行 / bug fix (timing of the check), rulings unchanged: see the summon-counting row of 706-20261110 |
+
 ## 706-20261110-4（生效 / effective: 2026-11-10 17:46:19 +08:00）
 
 脚本内容提交 S / script commit: [`9b490f405f738f4dc7afb844dc70007401a3a08a`](https://github.com/301zrg/specials/commit/9b490f405f738f4dc7afb844dc70007401a3a08a) · `706/` 子树 / subtree: `a0b3519b16433beb7646bbfaada6b2787e3dc7f0` · 标签 / tag: `706-20261110-4`（打在 S 上 / on S）· 分界 / boundary: `1794303979`（Unix 秒 / seconds）
